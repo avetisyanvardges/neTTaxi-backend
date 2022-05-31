@@ -16,4 +16,4 @@ function cors(req, res, next) {
     }
 }
 
-module.exports = cors;
+export default cors;

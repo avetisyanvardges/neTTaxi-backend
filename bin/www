@@ -4,10 +4,11 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+import app from '../app.js'
+import http from 'http'
+import {serverConfig} from '../config'
+
 var debug = require('debug')('nettaxi-backend:server');
-var http = require('http');
-const {serverConfig} = require('../config')
 
 /**
  * Get port from environment and store in Express.

@@ -1,5 +1,5 @@
-const {MongoClient} = require('mongodb')
-const {mongoConfig} = require('../config')
+import {MongoClient} from "mongodb";
+import {mongoConfig} from "../config.js";
 
 class MongoDB{
     static connectToMongoDB = () => {
@@ -14,5 +14,5 @@ class MongoDB{
 
 MongoDB.db = null
 
-module.exports = MongoDB
+export default MongoDB
 

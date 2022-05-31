@@ -2,23 +2,28 @@
   "name": "nettaxi-backend",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node bin/index.js",
+    "dev": "nodemon --experimental-json-modules bin/index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
     "express": "~4.16.1",
+    "firebase-admin": "^10.2.0",
+    "http": "^0.0.1-security",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.5.0",
-    "morgan": "~1.9.1"
+    "mongoose": "^6.3.2",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7"
   },
-  "projectConfig": {
-    "mongoConnectionUrl": "mongodb://localhost:27017",
-    "serverIp": "localhost",
-    "serverPort": 3000
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

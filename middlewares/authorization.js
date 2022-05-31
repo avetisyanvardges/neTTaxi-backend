@@ -1,6 +1,6 @@
-require('dotenv').config();
-let jwt = require('jsonwebtoken');
-const HttpErrors = require('http-errors')
+import jwt from 'jsonwebtoken'
+import HttpErrors from 'http-errors'
+
 
 const EXCLUDE = [];
 const {JWT_SECRET} = process.env

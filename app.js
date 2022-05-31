@@ -1,17 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from 'express';
+import createError from 'http-errors';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import indexRouter from './routes/index.js';
+import MongoDB from './services/mongodb.service.js';
+import cors from './middlewares/cors.js';
 
-var indexRouter = require('./routes/index');
-const MongoDB = require('./services/mongodb.service')
-const authorization = require('./middlewares/authorization');
-const cors = require('./middlewares/cors');
 
 MongoDB.connectToMongoDB()
 
-var app = express();
+const app = express();
 
 
 app.use(cors);
@@ -19,8 +17,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(authorization);
 
 app.use('/', indexRouter);
 
@@ -39,4 +35,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-module.exports = app;
+export default app;
